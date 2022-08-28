@@ -1,4 +1,5 @@
 import React from "react";
+export const name = <strong>Alessio</strong>
 
 export class Welcome extends React.Component {
     render() {
