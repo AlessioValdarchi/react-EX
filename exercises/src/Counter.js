@@ -8,12 +8,16 @@ export class Counter extends React.Component {
         this.state = {
             counter: 0
         }
+    }
+
+    componentDidMount() {
         setInterval(() => {
-            this.setState((state) => {
+            this.setState(() => {
                 return { counter: this.state.counter + this.props.incrAmount, }
             })
         }, this.props.incrTime);
     }
+
 
 
     render() {
