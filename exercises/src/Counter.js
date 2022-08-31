@@ -6,20 +6,34 @@ export class Counter extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            counter: 0
+            counter: this.props.initValue
         }
     }
 
     componentDidMount() {
         setInterval(() => {
-            this.setState(() => {
-                return { counter: this.state.counter + this.props.incrAmount, }
+            this.setState((state) => {
+                // return (
+                //     (state.counter + this.props.incrAmount) > this.props.initValue * 10
+                //         ? { counter: this.props.initValue }
+                //         : { counter: state.counter + this.props.incrAmount })
+                return (
+                    { counter: state.counter + this.props.incrAmount }
+                )
+
             })
         }, this.props.incrTime);
     }
 
+    componentDidUpdate() {
+        return (
+            (this.state.counter) > this.props.initValue * 10
+            && this.setState(() => {
+                return { counter: this.props.initValue }
+            })
 
-
+        )
+    }
     render() {
         return (
             <div>
@@ -31,5 +45,7 @@ export class Counter extends React.Component {
 
 Counter.defaultProps = {
     incrAmount: 2,
-    incrTime: 500
+    incrTime: 500,
+    initValue: 1,
+
 }
