@@ -1,4 +1,5 @@
 import React from "react";
+import { CounterButton } from "./CounterButton";
 import { CounterDisplay } from "./CounterDisplay";
 
 export class ClickCounter extends React.Component {
@@ -19,7 +20,7 @@ export class ClickCounter extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.incrCounter}>Increment </button>
+                <CounterButton incrCounter={this.incrCounter} />
                 <CounterDisplay counter={this.state.counter} />
             </div>
         )
