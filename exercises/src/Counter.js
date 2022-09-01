@@ -11,9 +11,9 @@ export class Counter extends React.Component {
     }
 
     componentDidMount() {
-        setInterval(() => {
+        setInterval((state) => {
             this.setState(() => {
-                return { counter: this.state.counter + this.props.incrAmount, }
+                return { counter: state.counter + this.props.incrAmount, }
             })
         }, this.props.incrTime);
     }
