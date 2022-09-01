@@ -10,7 +10,7 @@ export class Counter extends React.Component {
         }
         setInterval(() => {
             this.setState((state) => {
-                return { counter: this.state.counter + this.props.incrAmount, }
+                return { counter: state.counter + this.props.incrAmount, }
             })
         }, this.props.incrTime);
     }
