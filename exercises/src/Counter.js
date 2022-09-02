@@ -3,8 +3,13 @@ import { CounterDisplay } from "./CounterDisplay";
 
 export class Counter extends React.Component {
 
+<<<<<<< HEAD
     state = {
         counter: 0
+=======
+    state={
+        counter:0
+>>>>>>> 126b46236bb25db6f5ec955cfa8b484ac783c25c
     }
 
     componentDidMount() {
