@@ -24,12 +24,21 @@ export class TodoList extends React.Component {
             })
         }
     }
+
+    onReset = () => {
+        this.setState({
+            items: [],
+            currItem: ''
+
+        })
+    }
     render() {
         return (
             <><ul>
                 {this.state.items.map((item, index) => <li key={item + index}>{item}</li>)}
             </ul>
                 <input onChange={this.setItem} name="text" value={this.state.currItem} />
-                <button onClick={this.addItem}>Add Item</button></>)
+                <button onClick={this.addItem}>Add Item</button>
+                <button onClick={this.onReset}>Reset</button></>)
     }
 }
