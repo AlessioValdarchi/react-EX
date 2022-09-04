@@ -17,7 +17,10 @@ export class TodoList extends React.Component {
         if (this.state.currItem) {
             let tmpItems = this.state.items.concat(this.state.currItem);
             this.setState(state => {
-                return { items: tmpItems }
+                return {
+                    items: tmpItems,
+                    currItem: ''
+                }
             })
         }
     }
@@ -26,7 +29,7 @@ export class TodoList extends React.Component {
             <><ul>
                 {this.state.items.map((item, index) => <li key={item + index}>{item}</li>)}
             </ul>
-                <input onChange={this.setItem} name="text" />
+                <input onChange={this.setItem} name="text" value={this.state.currItem} />
                 <button onClick={this.addItem}>Add Item</button></>)
     }
 }
