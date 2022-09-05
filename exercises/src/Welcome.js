@@ -5,7 +5,7 @@ export const name = 'John'
 export class Welcome extends React.Component {
     render() {
         return (
-            (<div>
+            (<div className="welcome">
                 <p>Welcome, {this.props.name}</p>
                 {(this.props.age
                     && this.props.age < 65
