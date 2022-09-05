@@ -8,7 +8,7 @@ import { Welcome, name } from "./Welcome";
 //import { ClickTracker } from "./ClickTracker";
 //import { InteractiveWelcome } from "./InteractiveWelcome";
 //import { UncontrolledLogin } from "./UncontrolledLogin";
-//import { Login } from "./Login";
+import { Login } from "./Login";
 // const colors = [
 //     { id: 1, color: 'bianco' },
 //     { id: 2, color: 'celeste' },
@@ -24,6 +24,7 @@ export class App extends React.Component {
             <ClickTracker />
             <UncontrolledLogin /> */}
             {/* <Colors colors={colors} /> */}
+            <Login />
             <TodoList />
         </div>
         )

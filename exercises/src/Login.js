@@ -44,13 +44,17 @@ export class Login extends React.Component {
     }
 
     render() {
+        const myStyle = {
+            backgroundColor: this.state.password.length < 8 ? 'red' : 'green'
+        }
+
         this.setDisabledButton();
         return <div>
             <h1>Form Login</h1>
             <input name="username" value={this.state.username} onChange={this.inputOnChange} />
             <input name="password" type='password' value={this.state.password} onChange={this.inputOnChange} />
             <input name="checkbox" type='checkbox' checked={this.state.checkbox} onChange={this.inputOnChange} />
-            <button name="login" disabled={this.state.disabled} onClick={() => this.props.onLogin(this.state)}>Login</button>
+            <button name="login" disabled={this.state.disabled} onClick={() => this.props.onLogin(this.state)} style={myStyle}>Login</button>
             <button onClick={this.resetButton}>Reset</button>
         </div>
     }
