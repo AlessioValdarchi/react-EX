@@ -18,7 +18,7 @@ import { Container } from "./Container";
 export class App extends React.Component {
     render() {
         return (<div>
-            <Container>
+            <Container title='React Component'>
                 <Hello />
                 <Welcome name={name} age={10} />
                 {/* <InteractiveWelcome />
