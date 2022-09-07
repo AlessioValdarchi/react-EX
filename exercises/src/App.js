@@ -15,6 +15,7 @@ import { Container } from "./Container";
 //     { id: 2, color: 'celeste' },
 //     { id: 3, color: 'verde' }
 //]
+
 export class App extends React.Component {
     render() {
         return (<div>
@@ -27,7 +28,15 @@ export class App extends React.Component {
             <UncontrolledLogin /> */}
                 {/* <Colors colors={colors} /> */}
                 <Login />
-                <TodoList />
+                <TodoList
+                    render={(items, remove) => {
+                        return (<ul>
+                            {items.map((item, index) => <li key={item + index}>{item}
+                                <span><button id={item + index} onClick={remove}>Delete item</button></span></li>
+                            )}
+                        </ul>)
+                    }}
+                />
             </Container>
         </div>
         )

@@ -42,13 +42,11 @@ export class TodoList extends React.Component {
 
     render() {
         return (
-            <><ul>
-                {this.state.items.map((item, index) => <li key={item + index}>{item}
-                    <span><button id={item + index} onClick={this.deleteItem}>Delete item</button></span></li>
-                )}
-            </ul>
+            <>
+                {this.props.render(this.state.items, this.deleteItem)}
                 <input onChange={this.setItem} name="text" value={this.state.currItem} />
                 <button onClick={this.addItem}>Add Item</button>
-                <button onClick={this.onReset}>Reset</button></>)
+                <button onClick={this.onReset}>Reset</button>
+            </>)
     }
 }
