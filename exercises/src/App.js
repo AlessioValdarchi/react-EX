@@ -12,6 +12,7 @@ import { Login } from "./Login";
 import { Container } from "./Container";
 import { LanguageContext } from "./languageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
+import { Sum } from "./Sum";
 // const colors = [
 //     { id: 1, color: 'bianco' },
 //     { id: 2, color: 'celeste' },
@@ -54,6 +55,7 @@ export class App extends React.Component {
                             </ul>)
                         }}
                     />
+                    <Sum numbers={[8, 13, 15, 11]} />
                 </Container>
             </LanguageContext.Provider>
 
