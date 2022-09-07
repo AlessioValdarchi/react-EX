@@ -13,7 +13,7 @@ export class DisplayLanguage extends React.Component {
         return <div>
             <LanguageContext.Consumer>
                 {(lenguage) => {
-                    return <h2>{selectLeang[lenguage].SELECTLANG}</h2>
+                    return <h1>{selectLeang[lenguage].SELECTLANG}</h1>
                 }}
             </LanguageContext.Consumer>
         </div>
