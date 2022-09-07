@@ -10,6 +10,8 @@ import { Welcome, name } from "./Welcome";
 //import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Login } from "./Login";
 import { Container } from "./Container";
+import { LanguageContext } from "./languageContext";
+import { DisplayLanguage } from "./DisplayLanguage";
 // const colors = [
 //     { id: 1, color: 'bianco' },
 //     { id: 2, color: 'celeste' },
@@ -17,27 +19,45 @@ import { Container } from "./Container";
 //]
 
 export class App extends React.Component {
+    state = {
+        language: 'en'
+    }
+    selectLeng = (event) => {
+        this.setState({
+            language: event.target.value
+        })
+    }
     render() {
         return (<div>
-            <Container title='React Component'>
-                <Hello />
-                <Welcome name={name} age={10} />
-                {/* <InteractiveWelcome />
+            <select value={this.state.language} onChange={this.selectLeng}>
+                <option value='en'>English</option>
+                <option value='it'>Italiano</option>
+                <option value='es'>Espanol</option>
+            </select>
+            <LanguageContext.Provider value={this.state.language}>
+                <DisplayLanguage />
+                <Container title='React Component'>
+                    <Hello />
+                    <Welcome name={name} age={10} />
+                    {/* <InteractiveWelcome />
             <ClickCounter />
             <ClickTracker />
             <UncontrolledLogin /> */}
-                {/* <Colors colors={colors} /> */}
-                <Login />
-                <TodoList
-                    render={(items, remove) => {
-                        return (<ul>
-                            {items.map((item, index) => <li key={item + index}>{item}
-                                <span><button id={item + index} onClick={remove}>Delete item</button></span></li>
-                            )}
-                        </ul>)
-                    }}
-                />
-            </Container>
+                    {/* <Colors colors={colors} /> */}
+                    <Login />
+                    <TodoList
+                        render={(items, remove) => {
+                            return (<ul>
+                                {items.map((item, index) => <li key={item + index}>{item}
+                                    <span><button id={item + index} onClick={remove}>Delete item</button></span></li>
+                                )}
+                            </ul>)
+                        }}
+                    />
+                </Container>
+            </LanguageContext.Provider>
+
+
         </div>
         )
     }
