@@ -38,7 +38,7 @@ export class App extends React.Component {
                 <DisplayLanguage />
                 <Container title='React Component'>
                     <Hello />
-                    <Welcome name={name} age={10} />
+                    <Welcome name='Ale' />
                     {/* <InteractiveWelcome />
             <ClickCounter />
             <ClickTracker />
