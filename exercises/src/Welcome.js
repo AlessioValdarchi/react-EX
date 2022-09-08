@@ -1,6 +1,6 @@
 import React from "react";
 //import { Age } from "./Age";
-export const name = 'John'
+//export const name = 'John'
 export function Welcome({ name = 'Alessio' }) {
     return (
         <div className="welcome">

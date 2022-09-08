@@ -1,23 +1,13 @@
 import { Hello } from "./Hello";
 import React from "react";
 import { TodoList } from "./TodoList";
-//import { Colors } from "./Colors";
 import { Welcome, name } from "./Welcome";
-//import { Counter } from "./Counter";
-//import { ClickCounter } from "./ClickCounter";
-//import { ClickTracker } from "./ClickTracker";
-//import { InteractiveWelcome } from "./InteractiveWelcome";
-//import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Login } from "./Login";
 import { Container } from "./Container";
 import { LanguageContext } from "./languageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
-import { Sum } from "./Sum";
-// const colors = [
-//     { id: 1, color: 'bianco' },
-//     { id: 2, color: 'celeste' },
-//     { id: 3, color: 'verde' }
-//]
+import { HookCounter } from "./HookCounter";
+//import { Sum } from "./Sum";
 
 export class App extends React.Component {
     state = {
@@ -40,11 +30,6 @@ export class App extends React.Component {
                 <Container title='React Component'>
                     <Hello />
                     <Welcome name='Ale' />
-                    {/* <InteractiveWelcome />
-            <ClickCounter />
-            <ClickTracker />
-            <UncontrolledLogin /> */}
-                    {/* <Colors colors={colors} /> */}
                     <Login />
                     <TodoList
                         render={(items, remove) => {
@@ -55,7 +40,7 @@ export class App extends React.Component {
                             </ul>)
                         }}
                     />
-                    <Sum />
+                    <HookCounter />
                 </Container>
             </LanguageContext.Provider>
 
