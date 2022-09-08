@@ -7,6 +7,7 @@ import { Container } from "./Container";
 import { LanguageContext } from "./languageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { HookCounter } from "./HookCounter";
+import { LoginForm } from "./LoginForm";
 //import { Sum } from "./Sum";
 
 export class App extends React.Component {
@@ -40,7 +41,7 @@ export class App extends React.Component {
                             </ul>)
                         }}
                     />
-                    <HookCounter />
+                    <LoginForm />
                 </Container>
             </LanguageContext.Provider>
 
