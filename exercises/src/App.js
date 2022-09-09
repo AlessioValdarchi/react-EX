@@ -19,6 +19,10 @@ export class App extends React.Component {
             language: event.target.value
         })
     }
+
+    onCounterChange = (counter) => {
+        console.log(`the count is ${counter}`);
+    }
     render() {
         return (<div>
             <select value={this.state.language} onChange={this.selectLeng}>
@@ -42,6 +46,7 @@ export class App extends React.Component {
                         }}
                     />
                     <LoginForm />
+                    <HookCounter onCounterChange={this.onCounterChange} />
                 </Container>
             </LanguageContext.Provider>
 

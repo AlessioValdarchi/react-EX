@@ -1,14 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export function HookCounter({ initialValue = 0 }) {
-    const [counter, setCounter] = useState(initialValue);
+export function HookCounter(props) {
+    const [counter, setCounter] = useState(0);
 
     function incrementCounter() {
         setCounter((c) => c + 1)
     }
 
+    useEffect(() => {
+        props.onCounterChange(counter);
+    }, [counter, props])
+
     function resetCounter() {
-        setCounter(initialValue)
+        setCounter(0)
     }
 
     return <div>
