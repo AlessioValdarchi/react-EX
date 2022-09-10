@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
 
-export function HookCounter(props) {
-    const [counter, setCounter] = useState(0);
+export function HookCounter({ initialValue = 0, incrCount = 1 }) {
+    const [counter, setCounter] = useState(initialValue);
 
     function incrementCounter() {
-        setCounter((c) => c + 1)
+        setCounter((c) => c + incrCount)
     }
 
-    useEffect(() => {
-        props.onCounterChange(counter);
-    }, [counter, props])
+    const onCounterChange = () => {
+        console.log(`the counter is${counter}`);
+    };
+
+    useEffect(onCounterChange, [counter])
 
     function resetCounter() {
         setCounter(0)
