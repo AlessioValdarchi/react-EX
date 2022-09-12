@@ -9,6 +9,7 @@ import { DisplayLanguage } from "./DisplayLanguage";
 import { HookCounter } from "./HookCounter";
 import { LoginForm } from "./LoginForm";
 import { Counter } from "./Counter";
+import { GitHubUser } from "./GitHubUser";
 //import { Sum } from "./Sum";
 
 export class App extends React.Component {
@@ -32,6 +33,7 @@ export class App extends React.Component {
                 <Container title='React Component'>
                     <Hello />
                     <Welcome name='Ale' />
+                    <GitHubUser username={'AlessioValdarchi'} />
                     <Login />
                     <TodoList
                         render={(items, remove) => {

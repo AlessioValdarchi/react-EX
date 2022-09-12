@@ -33,5 +33,6 @@ export function Counter({ initialValue = 0, incr = 1, intervall = 5000 }) {
         </div>
     )
 }
+// chiedere a francesco il motivo del clear interval come unmount!!!
 
 
