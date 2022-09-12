@@ -32,10 +32,7 @@ export class App extends React.Component {
             <LanguageContext.Provider value={this.state.language}>
                 <DisplayLanguage />
                 <Container title='React Component'>
-
-                    <GitHubUser username={'AlessioValdarchi'} />
-                    <GithubUserList />
-
+                    <HookCounter />
                 </Container>
             </LanguageContext.Provider>
 
