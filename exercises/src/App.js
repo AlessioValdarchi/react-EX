@@ -10,6 +10,7 @@ import { HookCounter } from "./HookCounter";
 import { LoginForm } from "./LoginForm";
 import { Counter } from "./Counter";
 import { GitHubUser } from "./GitHubUser";
+import { GithubUserList } from "./GithubUserList";
 //import { Sum } from "./Sum";
 
 export class App extends React.Component {
@@ -31,22 +32,10 @@ export class App extends React.Component {
             <LanguageContext.Provider value={this.state.language}>
                 <DisplayLanguage />
                 <Container title='React Component'>
-                    <Hello />
-                    <Welcome name='Ale' />
+
                     <GitHubUser username={'AlessioValdarchi'} />
-                    <Login />
-                    <TodoList
-                        render={(items, remove) => {
-                            return (<ul>
-                                {items.map((item, index) => <li key={item + index}>{item}
-                                    <span><button id={item + index} onClick={remove}>Delete item</button></span></li>
-                                )}
-                            </ul>)
-                        }}
-                    />
-                    {/* <HookCounter initialValue={2} incrCount={2} /> */}
-                    <Counter initialValue={1} />
-                    <LoginForm />
+                    <GithubUserList />
+
                 </Container>
             </LanguageContext.Provider>
 
