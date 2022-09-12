@@ -1,22 +1,13 @@
-
-import { useEffect, useState } from "react";
+import { useGitHubUser } from "./useGitHubUser"
 
 export function GitHubUser({ username }) {
-    const [data, SetData] = useState('')//chiedere tutor null stringa vuota
+    const { data, error } = useGitHubUser({ username })
+    return (<div>
+        {error ? <h1>user not found</h1>
+            : <h4>user fetch by:{data.name}</h4>}
+        {!data.bio ? <p>Bio not aviable</p>
+            : <p>Bio:{data.bio}</p>}
 
-    async function fetchUserApi(username) {
-        const response = await fetch(`https://api.github.com/users/${username}`);
-        const json = await response.json()
-        console.log(json);
-        SetData(() => { return json })
-    }
 
-    useEffect(() => {
-        fetchUserApi(username)
-    }, [username])
-
-    return <div>
-        <h4>user fetch by:{data.name}</h4>
-        <p>Bio:{data.bio}</p>
-    </div>
+    </div>)
 }
