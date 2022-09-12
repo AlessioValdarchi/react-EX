@@ -8,6 +8,7 @@ import { LanguageContext } from "./languageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { HookCounter } from "./HookCounter";
 import { LoginForm } from "./LoginForm";
+import { Counter } from "./Counter";
 //import { Sum } from "./Sum";
 
 export class App extends React.Component {
@@ -41,7 +42,8 @@ export class App extends React.Component {
                             </ul>)
                         }}
                     />
-                    <HookCounter initialValue={2} incrCount={2} />
+                    {/* <HookCounter initialValue={2} incrCount={2} /> */}
+                    <Counter initialValue={1} />
                     <LoginForm />
                 </Container>
             </LanguageContext.Provider>
