@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 export function useGitHubUser({ username }) {
     const [data, SetData] = useState('')//chiedere tutor null stringa vuota
     const [error, SetError] = useState(false)
+    const [loading, SetLoading] = useState(true)
 
     async function fetchUserApi(username) {
+        SetError(false);
+        SetLoading(true)
         const response = await fetch(`https://api.github.com/users/${username}`);
         try {
             if (response.ok) {
@@ -18,8 +21,12 @@ export function useGitHubUser({ username }) {
         }
 
         catch (e) {
-            SetError(() => {
-                return true
+            SetError(true)
+            SetData(false)
+        }
+        finally {
+            SetLoading(() => {
+                return false
             })
         }
     }
@@ -27,5 +34,5 @@ export function useGitHubUser({ username }) {
         fetchUserApi(username)
     }, [username])
 
-    return { data, error }
+    return { data, error, loading, fetchUserApi }
 }
