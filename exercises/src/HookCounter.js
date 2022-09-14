@@ -1,7 +1,7 @@
 import { useCounter } from "./useCounter";
 
-export function HookCounter() {
-    const { counter, incrementHandler, decrementHandler, resetHandler } = useCounter()
+export function HookCounter({ initialValue = 0 }) {
+    const { counter, incrementHandler, decrementHandler, resetHandler } = useCounter(initialValue)
 
     return (
         <div>

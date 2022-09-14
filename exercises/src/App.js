@@ -8,6 +8,7 @@ import { LanguageContext } from "./languageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { HooksLogin } from "./HooksLogin";
 import { GitHubUser } from "./GitHubUser";
+import { HookCounter } from "./HookCounter";
 //import { HookCounter } from "./HookCounter";
 //import { LoginForm } from "./LoginForm";
 //import { Counter } from "./Counter";
@@ -34,7 +35,7 @@ export class App extends React.Component {
             <LanguageContext.Provider value={this.state.language}>
                 <DisplayLanguage />
                 <Container title='React Component'>
-                    <GitHubUser username={'kmnmfj7'} />
+                    <HookCounter />
                 </Container>
             </LanguageContext.Provider>
 
