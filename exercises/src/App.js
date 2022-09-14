@@ -34,7 +34,7 @@ export class App extends React.Component {
             <LanguageContext.Provider value={this.state.language}>
                 <DisplayLanguage />
                 <Container title='React Component'>
-                    <GitHubUser username={'Kekko26'} />
+                    <GitHubUser username={'kmnmfj7'} />
                 </Container>
             </LanguageContext.Provider>
 
