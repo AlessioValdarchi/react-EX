@@ -1,5 +1,5 @@
 //import { Hello } from "./Hello";
-import React from "react";
+import React, { useState } from "react";
 //import { TodoList } from "./TodoList";
 //import { Welcome, name } from "./Welcome";
 //import { Login } from "./Login";
@@ -20,15 +20,23 @@ import { FilterdList } from "./FilteredList";
 
 export function App() {
 
-
-
+    const [language, SetLanguage] = useState('en')
+    const handelLanguage = (event) => {
+        SetLanguage(event.target.value)
+    }
     return (<div>
-
-        <DisplayLanguage />
-        <Container title='React Component'>
-            <CarDetails />
-            <FilterdList />
-        </Container>
+        <select value={language} onChange={handelLanguage}>
+            <option value='en'>English</option>
+            <option value='it'>Italiano</option>
+            <option value='es'>Espanol</option>
+        </select>
+        <LanguageContext.Provider value={language}>
+            <Container title='React Component'>
+                <DisplayLanguage />
+                <CarDetails />
+                <FilterdList />
+            </Container>
+        </LanguageContext.Provider>
     </div>
     )
 }
