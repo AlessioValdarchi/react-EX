@@ -10,6 +10,7 @@ import { HooksLogin } from "./HooksLogin";
 import { GitHubUser } from "./GitHubUser";
 import { HookCounter } from "./HookCounter";
 import { CarDetails } from "./CarDetails";
+import { FilterdList } from "./FilteredList";
 //import { HookCounter } from "./HookCounter";
 //import { LoginForm } from "./LoginForm";
 //import { Counter } from "./Counter";
@@ -26,6 +27,7 @@ export function App() {
         <DisplayLanguage />
         <Container title='React Component'>
             <CarDetails />
+            <FilterdList />
         </Container>
     </div>
     )
