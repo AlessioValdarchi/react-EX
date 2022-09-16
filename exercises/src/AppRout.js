@@ -10,6 +10,7 @@ export function AppRout() {
             <Route path="/" element={<Welcome name={'Alessio'} />} />
             <Route path="/counter" element={<Counter />} />
             <Route path="/:username" element={<RootGitHubUser />} />
+            <Route path="*" element={<h3>Page not found</h3>} />
         </Routes>
     </div>
     )
