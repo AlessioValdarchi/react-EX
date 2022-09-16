@@ -13,6 +13,7 @@ export function AppRout() {
             <Route path="*" element={<h3>Page not found</h3>} />
             <Route path="/users" element={<GithubUserList />} >
                 <Route path=":username" element={<RootGitHubUser />} />
+                <Route index element={<p>Please add an user and select it</p>} />
             </Route>
         </Routes>
     </div>
