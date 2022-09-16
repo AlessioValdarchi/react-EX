@@ -2,6 +2,7 @@ import { Route, Routes, Link } from "react-router-dom";
 import { Welcome } from './Welcome'
 import { Counter } from './Counter'
 import { RootGitHubUser } from './RootGitHubUser'
+import { GithubUserList } from "./GithubUserList";
 export function AppRout() {
     return (<div>
         <h3>Navigate to:</h3>
@@ -9,8 +10,10 @@ export function AppRout() {
         <Routes>
             <Route path="/" element={<Welcome name={'Alessio'} />} />
             <Route path="/counter" element={<Counter />} />
-            <Route path="/:username" element={<RootGitHubUser />} />
             <Route path="*" element={<h3>Page not found</h3>} />
+            <Route path="/users" element={<GithubUserList />} >
+                <Route path=":username" element={<RootGitHubUser />} />
+            </Route>
         </Routes>
     </div>
     )
