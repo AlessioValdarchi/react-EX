@@ -1,7 +1,10 @@
 import { useGitHubUser } from "./useGitHubUser"
 
 export function GitHubUser({ username }) {
-    const { data, error, loading } = useGitHubUser(username)
+    const { data, error, loading, mutate } = useGitHubUser(username)
+    function onRefresh() {
+        mutate()
+    }
 
 
     return (<div>
@@ -11,7 +14,7 @@ export function GitHubUser({ username }) {
         {data &&
             !data.bio ? <p>Bio not aviable</p>
             : <p>Bio:{data.bio}</p>}
-
+        <button onClick={onRefresh}>Refresh</button>
 
     </div>)
 }
