@@ -1,18 +1,14 @@
 import { useGitHubUser } from "./useGitHubUser"
 
 export function GitHubUser({ username }) {
-    const { data, error, loading, fetchUserApi } = useGitHubUser({ username })
+    const { data, error, loading } = useGitHubUser(username)
 
-    function GetUserGitHub() {
-        fetchUserApi(username)
-    }
 
     return (<div>
-        <button onClick={GetUserGitHub}>Fetch hear</button>
         {loading && <h4>loading...</h4>}
-        {!loading && error && <h1>user not found</h1>}
-        {!loading && data && <h4>user fetch by:{data.name}</h4>}
-        {!loading && data &&
+        {error && <h1>user not found</h1>}
+        {data && <h4>user fetch by:{data.name}</h4>}
+        {data &&
             !data.bio ? <p>Bio not aviable</p>
             : <p>Bio:{data.bio}</p>}
 
