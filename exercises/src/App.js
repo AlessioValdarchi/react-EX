@@ -15,7 +15,7 @@ import { FilterdList } from "./FilteredList";
 //import { LoginForm } from "./LoginForm";
 //import { Counter } from "./Counter";
 //import { GitHubUser } from "./GitHubUser";
-//import { GithubUserList } from "./GithubUserList";
+import { GithubUserList } from "./GithubUserList";
 //import { Sum } from "./Sum";
 
 export function App() {
@@ -34,7 +34,7 @@ export function App() {
             <Container title='React Component'>
                 <DisplayLanguage />
                 <CarDetails />
-                <FilterdList />
+                <GithubUserList />
             </Container>
         </LanguageContext.Provider>
     </div>

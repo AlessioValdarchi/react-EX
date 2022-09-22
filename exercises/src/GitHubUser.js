@@ -8,7 +8,6 @@ export function GitHubUser({ username }) {
     }
 
     return (<div>
-        <button onClick={GetUserGitHub}>Fetch hear</button>
         {loading && <h4>loading...</h4>}
         {!loading && error && <h1>user not found</h1>}
         {!loading && data && <h4>user fetch by:{data.name}</h4>}

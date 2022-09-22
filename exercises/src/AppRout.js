@@ -7,7 +7,7 @@ export function AppRout() {
         <Routes>
             <Route path="/" element={<Welcome name={'Alessio'} />} />
             <Route path="/counter" element={<Counter />} />
-            <Route path="/:username" element={<RootGitHubUser />} />
+            <Route path="/users/:username" element={<RootGitHubUser />} />
         </Routes>
     )
 }
